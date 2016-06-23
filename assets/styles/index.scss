@@ -9,13 +9,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   min-height: 240px;
   border-radius: 10px;
   padding-bottom: 15px;
+
 }
-.task-list input, .task-list textarea {
+.bucket-list input, .bucket-list textarea {
   width: 240px;
   margin: 1px 5px;
 }
 
-.task-list input {
+.bucket-list input {
   height: 30px;
 }
 

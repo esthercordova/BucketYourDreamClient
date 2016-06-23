@@ -7,121 +7,121 @@
    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
  </head>
- <body class="container-fluid">
-
-   <!-- Buttons for modals -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn"> Sign In </button>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut"> Sign Out </button>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp"> Sign Up </button>
+   <body class="container-fluid">
 
 
-<!-- Modal SignIn and Change Password -->
-<div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sign in or change your password</h4>
+     <!-- Buttons for modals -->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn"> Sign In </button>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut"> Sign Out </button>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp"> Sign Up </button>
+
+
+  <!-- Modal SignIn and Change Password -->
+  <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Sign in or change your password</h4>
+        </div>
+        <div class="modal-body">
+
+          <form id="sign-in">
+            <fieldset>
+              <legend>Sign In</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" name="submit" value="Sign In">
+            </fieldset>
+          </form>
+
+          <form id="change-password">
+            <fieldset>
+              <legend>Change Password</legend>
+              <input type="password" name="passwords[old]" placeholder="Current Password">
+              <input type="password" name="passwords[new]" placeholder="New Password">
+              <input type="submit" name="submit" value="Change Password">
+            </fieldset>
+          </form>
+
+        </div>
+
       </div>
-      <div class="modal-body">
-
-        <form id="sign-in">
-          <fieldset>
-            <legend>Sign In</legend>
-            <input type="text" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="submit" name="submit" value="Sign In">
-          </fieldset>
-        </form>
-
-        <form id="change-password">
-          <fieldset>
-            <legend>Change Password</legend>
-            <input type="password" name="passwords[old]" placeholder="Current Password">
-            <input type="password" name="passwords[new]" placeholder="New Password">
-            <input type="submit" name="submit" value="Change Password">
-          </fieldset>
-        </form>
-
-      </div>
-
     </div>
   </div>
-</div>
 
-<!-- Modalfor SignOut -->
-<div class="modal fade" id="signOut" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+  <!-- Modalfor SignOut -->
+  <div class="modal fade" id="signOut" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+
+          <form id="sign-out">
+            <fieldset>
+              <legend>Sign Out!</legend>
+              <input class="sign-out" type="submit" value="Sign Out">
+            </fieldset>
+          </form>
+        </div>
+
       </div>
-      <div class="modal-body">
-
-        <form id="sign-out">
-          <fieldset>
-            <legend>Sign Out!</legend>
-            <input class="sign-out" type="submit" value="Sign Out">
-          </fieldset>
-        </form>
-      </div>
-
     </div>
   </div>
-</div>
 
-<!-- Modal for SignUp -->
-<div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+  <!-- Modal for SignUp -->
+  <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign up!</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" name="submit" value="Sign up!">
+            </fieldset>
+          </form>
+        </div>
+
       </div>
-      <div class="modal-body">
-
-        <form id="sign-up">
-          <fieldset>
-            <legend>Sign up!</legend>
-            <input type="text" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-            <input type="submit" name="submit" value="Sign up!">
-          </fieldset>
-        </form>
-      </div>
-
     </div>
   </div>
-</div>
 
-   <div class="content">
+   <div div style="width:800px; margin:0 auto;" class="content">
 
-     <h1> Die With Memories Not Dreams </h1>
-     <h2> Things I need to do </h2>
+       <h1> Die With Memories Not Dreams </h1>
+       <h2> Things I need to do </h2>
 
-     <div class="bucket-list" id="inProgress">
-       <h3>Still a dream</h3>
-    </div>
+       <div class="bucket-list" id="inProgress">
+         <h3>Still a dream</h3>
+      </div>
 
-     <div class="bucket-list" id="completed">
-       <h3>Memory bucket</h3>
-     </div>
+       <div class="bucket-list">
+        <h3>Add a dream to convert into a memory</h3>
+          <form id="todo-form">
+            <input type="text" placeholder="Title" />
+            <textarea placeholder="Describe your dream"></textarea>
+            <input type="text" placeholder="Due Date (dd/mm/yyyy)" />
+            <input type="button" class="btn btn-primary" value="Add DREAM" />
+          </form>
+        <div id="delete-div">Drag Here to Delete</div>
+      </div>
 
-     <div class="bucket-list">
-      <h3>Add a dream to convert into a memory</h3>
-        <form id="todo-form">
-          <input type="text" placeholder="Title" />
-          <textarea placeholder="Descrtipion"></textarea>
-          <input type="text" placeholder="Due Date (dd/mm/yyyy)" />
-          <input type="button" class="btn btn-primary" value="Add DREAM" />
-        </form>
-      <div id="delete-div">Drag Here to Delete</div>
-    </div>
-
-
+      <div class="bucket-list" id="completed">
+        <h3>Memory bucket</h3>
+      </div>
 
    </div>
+
  </body>
 </html>
