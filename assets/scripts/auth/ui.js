@@ -2,6 +2,10 @@
 
 const app = require('../app.js');
 
+$(window).load(function(){
+       $('#welcomeModal').modal('show');
+   });
+
 const success = (data) => {
   if (data) {
     console.log(data);
