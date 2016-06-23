@@ -1,2 +1,40 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.bucket-list {
+  width: 250px;
+  float: left;
+  margin: 0 5px;
+  background-color: #e3e3e3;
+  min-height: 240px;
+  border-radius: 10px;
+  padding-bottom: 15px;
+}
+.task-list input, .task-list textarea {
+  width: 240px;
+  margin: 1px 5px;
+}
+
+.task-list input {
+  height: 30px;
+}
+
+.todo-task {
+  border-radius: 5px;
+  background-color: #fff;
+  width: 230px;
+  margin: 5px;
+  padding: 5px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+#delete-div {
+  background-color: #fff;
+  border: 3px solid white;
+  margin: 10px;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+}
