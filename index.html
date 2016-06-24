@@ -14,27 +14,21 @@
         <ul class="nav navbar-nav navbar-right">
 
         <ul class="nav navbar-nav">
-          <li><a href="#myModal" data-toggle="modal" data-target="#signIn">Log-in</a></li>
-          <li><a href="#myModal" data-toggle="modal" data-target="#signUp">Sign-Up</a></li>
-          <li><a href="#signUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="#myModal" data-toggle="modal" data-target="#signIn"><span class="glyphicon glyphicon-user"></span> Sign-In</a></li>
+          <li><a href="#myModal" data-toggle="modal" data-target="#signUp"> Sign-Up</a></li>
+          <li><a href="#myModal" data-toggle="modal" data-target="#signOut"><span class="glyphicon glyphicon-log-in"></span> Sign-Out</a></li>
+          <li><a href="#myModal" data-toggle="modal" data-target="#changePassword"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
         </ul>
         </div>
       </nav>
 
-  <!-- Buttons for modals -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn"> Sign In </button>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut"> Sign Out </button>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp"> Sign Up </button>
-
-
-  <!-- Modal SignIn and Change Password -->
+  <!-- Modal SignIn-->
   <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Sign in or change your password</h4>
+          <h4 class="modal-title" id="myModalLabel">Sign in</h4>
         </div>
         <div class="modal-body">
 
@@ -46,6 +40,22 @@
               <input type="submit" name="submit" value="Sign In">
             </fieldset>
           </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Password -->
+  <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Change your password</h4>
+        </div>
+        <div class="modal-body">
 
           <form id="change-password">
             <fieldset>
