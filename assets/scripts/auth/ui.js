@@ -18,6 +18,11 @@ const failure = (error) => {
   console.error(error);
 };
 
+const passwordFailure = (error) => {
+  $('#changePasswordMessage').html('Your password is not correct. Try again');
+  console.error(error);
+};
+
 const changePasswordSuccess = () => {
   $('#changePasswordMessage').html('You successfully changed your password.');
   $('#signUpMessage').html('');
@@ -57,5 +62,6 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   signUpSuccess,
-  changePasswordSuccess
+  changePasswordSuccess,
+  passwordFailure
 };
