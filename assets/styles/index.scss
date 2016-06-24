@@ -11,9 +11,9 @@ body {
 .bucket-list {
   width: 250px;
   float: left;
-  margin: 0 5px;
+  margin: 0 6px;
   background-color: #e3e3e3;
-  min-height: 240px;
+  min-height: 340px;
   border-radius: 10px;
   padding-bottom: 15px;
 
@@ -45,4 +45,18 @@ h1, h2, h3 {
   height: 75px;
   line-height: 75px;
   text-align: center;
+}
+
+.navbar-custom {
+    background-color:#688300;
+    color:#DBC96A;
+    border-radius:5px;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#DBC96A;
+}
+
+.navbar-custom .navbar-brand {
+    color:#DBC96A;
 }
