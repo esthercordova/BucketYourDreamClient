@@ -1,6 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: url("~/img/background.jpg");
+}
 .bucket-list {
   width: 250px;
   float: left;
