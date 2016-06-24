@@ -4,7 +4,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: url("~/img/background.jpg");
+  background: url("~/img/background.jpg") no-repeat;
+  background-size: 100%;
+  // background-attachment:fixed;
 }
 .bucket-list {
   width: 250px;
