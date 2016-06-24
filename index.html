@@ -9,11 +9,23 @@
  </head>
    <body class="container-fluid">
 
+     <nav class="navbar navbar-inverse">
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
 
-     <!-- Buttons for modals -->
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn"> Sign In </button>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut"> Sign Out </button>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp"> Sign Up </button>
+        <ul class="nav navbar-nav">
+          <li><a href="#myModal" data-toggle="modal" data-target="#signIn">Log-in</a></li>
+          <li><a href="#myModal" data-toggle="modal" data-target="#signUp">Sign-Up</a></li>
+          <li><a href="#signUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+        </div>
+      </nav>
+
+  <!-- Buttons for modals -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signIn"> Sign In </button>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signOut"> Sign Out </button>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signUp"> Sign Up </button>
 
 
   <!-- Modal SignIn and Change Password -->
@@ -124,7 +136,7 @@
       </div>
 
        <div class="bucket-list">
-        <h3>Add a dream to convert into a memory</h3>
+        <h3>Convert dreams into a memories</h3>
           <form id="todo-form">
             <input type="text" placeholder="Title" />
             <textarea placeholder="Describe your dream"></textarea>
