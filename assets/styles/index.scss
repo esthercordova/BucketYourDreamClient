@@ -1,6 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+canvas {
+    border:1px dashed #999;
+    height:600px;
+    width:600px;
+}
 
 body {
   font-family: 'Raleway', sans-serif;

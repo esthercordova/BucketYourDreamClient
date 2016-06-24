@@ -20,6 +20,8 @@ const failure = (error) => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
+  $('#signInMessage').html('You successfully logged in!');
+  console.log('User signed in successfully');
   console.log(app.user);
 };
 

@@ -4,13 +4,13 @@
  <head>
    <title>Project 2</title>
 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
  </head>
    <body class="container-fluid">
-
 
      <nav class="navbar navbar-custom">
       <div class="collapse navbar-collapse">
@@ -45,6 +45,7 @@
               <input type="text" name="credentials[email]" placeholder="Email">
               <input type="password" name="credentials[password]" placeholder="Password">
               <input type="submit" name="submit" value="Sign In">
+              <div id='signInMessage'></div>
             </fieldset>
           </form>
 
@@ -118,6 +119,7 @@
               <input type="password" name="credentials[password]" placeholder="Password">
               <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
               <input type="submit" name="submit" value="Sign up!">
+
             </fieldset>
           </form>
         </div>
