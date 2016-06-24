@@ -1,17 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-canvas {
-    border:1px dashed #999;
-    height:600px;
-    width:600px;
-}
-
 body {
   font-family: 'Raleway', sans-serif;
   background: url("~/img/background.jpg") no-repeat;
   background-size: 100%;
-  // background-attachment:fixed;
+  color: #001a00;
 }
 .bucket-list {
   width: 250px;
@@ -50,6 +44,11 @@ h1, h2, h3 {
   height: 75px;
   line-height: 75px;
   text-align: center;
+}
+
+.modal-content {
+  background-color: #d9d9d9;
+
 }
 
 // bootstrap customize nav bar

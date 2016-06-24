@@ -4,6 +4,7 @@ const app = require('../app.js');
 
 $(window).load(function(){
        $('#welcomeModal').modal('show');
+       $('#user-interface').hide();
    });
 
 const success = (data) => {
@@ -28,6 +29,7 @@ const changePasswordSuccess = () => {
   $('#signUpMessage').html('');
   $('#signOutMessage').html('');
   $('#signInMessage').html('');
+  $('#user-interface').show();
 };
 
 const signUpSuccess = (data) => {
@@ -45,6 +47,7 @@ const signInSuccess = (data) => {
   $('#signUpMessage').html('');
   $('#signOutMessage').html('');
   $('#changePasswordMessage').html('');
+  $('#user-interface').show();
   console.log(app.user);
 };
 
@@ -54,6 +57,7 @@ const signOutSuccess = () => {
   $('#signOutMessage').html("It's sad to see you leave... Come back soon.");
   $('#signUpMessage').html('');
   $('#changePasswordMessage').html('');
+  $('#user-interface').hide();
 };
 
 module.exports = {
