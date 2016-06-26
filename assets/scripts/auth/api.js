@@ -2,6 +2,25 @@
 
 const app = require('../app.js');
 
+const changeStatusOfItem = (itemId) => {
+  return $.ajax({
+    url: app.host + '/items/' + itemId,
+    method: "PATCH",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data:
+      {item:{
+        title: 'title',
+        description: 'dreamDescription',
+        status: false,
+      }
+      }
+  });
+};
+
+
+
 const createItem = (dueDate, dreamDescription, title) => {
   return $.ajax ({
     url: app.host + '/items',
@@ -10,6 +29,7 @@ const createItem = (dueDate, dreamDescription, title) => {
       {item:{
         title: title,
         description: dreamDescription,
+        status: true,
       }
       }
   });
@@ -77,4 +97,5 @@ module.exports = {
   createItem,
   loadItems,
   deleteItem,
+  changeStatusOfItem,
 };

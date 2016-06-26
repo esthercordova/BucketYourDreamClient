@@ -53,8 +53,13 @@ const onCreateItem = (event) => {
   let dreamDescription = $('#todo-form :input[name=dream-description]').val();
   let title = $('#todo-form :input[name=title]').val();
   api.createItem(dueDate, dreamDescription, title)
-  .done(ui.createItemSuccess(dueDate, dreamDescription, title))
+  .done(ui.success)
   .fail(ui.failure);
+
+  api.loadItems()
+  .done(ui.populatingDreams)
+  .fail(ui.failure);
+
 };
 
 const onDeleteItem = (event) => {
@@ -68,11 +73,15 @@ const onDeleteItem = (event) => {
 const onChangeStatusItem = (event) => {
   event.preventDefault();
   console.log("got so far, clicked send to memory button");
+  let itemId = $(event.target.parentElement).data('id');
+  api.changeStatusOfItem(itemId)
+  .done(ui.changeStatusOfItemSuccess)
+  .fail(ui.failure);
 };
 
 const onEditItem = (event) => {
   event.preventDefault();
-  console.log("got so far, clickes edit button");
+  console.log("got so far, clicked edit button");
 };
 
 const addHandlers = () => {
@@ -80,7 +89,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
-  $('#todo-form').on('submit', function(event){event.preventDefault(); console.log($('button').parent()[0].remove())});
+  $('#todo-form').on('submit', onCreateItem);
   $('#inProgress').on('click', 'button.deleteItem', onDeleteItem);
   $('#inProgress').on('click', 'button.changeStatusOfItem', onChangeStatusItem);
   $('#inProgress').on('click', 'button.editItem', onEditItem);
