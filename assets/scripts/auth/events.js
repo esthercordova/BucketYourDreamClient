@@ -17,7 +17,7 @@ const onSignUp = (event) => {
 const onSignInSuccess = (data) => {
 
   ui.signInSuccess(data);
-  
+
   api.loadItems()
   .done(ui.populatingDreams)
   .fail(ui.failure);
@@ -55,7 +55,14 @@ const onCreateItem = (event) => {
   api.createItem(dueDate, dreamDescription, title)
   .done(ui.createItemSuccess(dueDate, dreamDescription, title))
   .fail(ui.failure);
+};
 
+const onDeleteItem = (event) => {
+  event.preventDefault();
+  let deleteId = $(event.target.parentElement).data('id');
+  api.deleteItem(deleteId)
+  .done(ui.deleteItemSuccess(event))
+  .fail(ui.failure);
 };
 
 const addHandlers = () => {
@@ -63,7 +70,8 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
-  $('#todo-form').on('submit', onCreateItem);
+  $('#todo-form').on('submit', function(event){event.preventDefault(); console.log($('button').parent()[0].remove())});
+  $('#inProgress').on('click', 'button.deleteItem', onDeleteItem);
 };
 //
 module.exports = {

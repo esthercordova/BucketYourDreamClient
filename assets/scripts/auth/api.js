@@ -15,6 +15,16 @@ const createItem = (dueDate, dreamDescription, title) => {
   });
 };
 
+const deleteItem = (itemId) => {
+  return $.ajax({
+    url: app.host + '/items/' + itemId,
+    method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 const signUp = (data) => {
   return $.ajax({
     url: app.host + '/sign-up',
@@ -66,4 +76,5 @@ module.exports = {
   changePassword,
   createItem,
   loadItems,
+  deleteItem,
 };

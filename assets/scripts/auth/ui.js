@@ -15,13 +15,14 @@ const success = (data) => {
   }
 };
 
+const deleteItemSuccess = (event) => {
+    event.target.parentElement.remove();
+};
+
 const createItemSuccess = (dueDate, dreamDescription, title) => {
   if (dueDate && dreamDescription && title) {
-    var itemDiv = ' <div class="itemContainer"> <div class="itemTitle">'+ title +'</div> \
-      <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> \
-      '+ dueDate +'</div> </div>'+ '<button> delete </button>';
+    var itemDiv = ' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> </div>';
     $('#inProgress').prepend(itemDiv);
-    $('.itemContainer')[0].draggable();
   } else {
     console.log('It doesnt have data!');
   }
@@ -32,9 +33,7 @@ const populatingDreams = (jsonObject) => {
     let title = jsonObject.items[i]['title'];
     let dreamDescription = jsonObject.items[i]['description'];
     let dueDate = '01-01-2001';
-    var itemDiv = ' <div class="itemContainer  ui-widget-content"> <div class="itemTitle">'+ title +'</div> \
-      <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'\
-      </div> </div>'+ '<button> delete </button>';
+    var itemDiv = ' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> </div>';
     $('#inProgress').prepend(itemDiv);
   }
   console.log(jsonObject);
@@ -95,4 +94,5 @@ module.exports = {
   passwordFailure,
   createItemSuccess,
   populatingDreams,
+  deleteItemSuccess,
 };
