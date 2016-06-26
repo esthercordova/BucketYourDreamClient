@@ -19,7 +19,7 @@ const createItemSuccess = (dueDate, dreamDescription, title) => {
   if (dueDate && dreamDescription && title) {
     var itemDiv = ' <div class="itemContainer"> <div class="itemTitle">'+ title +'</div> \
       <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> </div>';
-    $('#inProgress').append(itemDiv);
+    $('#inProgress').prepend(itemDiv);
   } else {
     console.log('It doesnt have data!');
   }
@@ -32,7 +32,7 @@ const populatingDreams = (jsonObject) => {
     let dueDate = '01-01-2001';
     var itemDiv = ' <div class="itemContainer"> <div class="itemTitle">'+ title +'</div> \
       <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> </div>';
-    $('#inProgress').append(itemDiv);
+    $('#inProgress').prepend(itemDiv);
   }
   console.log(jsonObject);
 };
