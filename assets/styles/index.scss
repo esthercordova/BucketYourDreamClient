@@ -9,6 +9,15 @@ body {
 }
 
 .itemContainer {
+background-color: #fff;
+border-radius: 5px;
+width: 230px;
+margin: 5px;
+padding: 5px;
+}
+
+.itemTitle {
+  font-weight: bold;
   background-color: red;
 }
 
