@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-   <title>Project 2</title>
+   <title>BucketYourDream</title>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
@@ -155,7 +155,6 @@
    <div div style="width:800px; margin:0 auto;" class="content" id="user-interface">
 
        <h1> Die With Memories Not Dreams </h1>
-       <h2> Things I need to do </h2>
 
        <div class="bucket-list" id="inProgress">
          <h3>Still a dream</h3>
@@ -164,10 +163,10 @@
        <div class="bucket-list">
         <h3>Convert dreams into a memories</h3>
           <form id="todo-form">
-            <input type="text" placeholder="Title" />
-            <textarea placeholder="Describe your dream"></textarea>
-            <input type="text" placeholder="Due Date (dd/mm/yyyy)" />
-            <input type="button" class="btn btn-green" value="Add DREAM" />
+            <input type="text" name="title" placeholder="Title" />
+            <textarea name="dream-description" placeholder="Describe your dream"></textarea>
+            <input type="text" name='due-date' placeholder="Due Date (dd/mm/yyyy)" />
+            <input type="submit" class="btn btn-green" value="Add DREAM" />
           </form>
         <div id="delete-div">Drag Here to Delete</div>
       </div>
