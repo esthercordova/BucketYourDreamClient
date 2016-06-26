@@ -23,21 +23,12 @@ const deleteItemSuccess = (event) => {
     event.target.parentElement.remove();
 };
 
-const createItemSuccess = (dueDate, dreamDescription, title) => {
-  if (dueDate && dreamDescription && title) {
-    var itemDiv = $(' <div class="itemContainer ui-widget-content" data-id="'+ 1 +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> <button class="editItem"> edit </button> <button class="changeStatusOfItem"> sent to Memory </button> </div>');
-    $('#inProgress').prepend(itemDiv);
-  } else {
-    console.log('It doesnt have data!');
-  }
-};
-
 const populatingDreams = (jsonObject) => {
   for (var i = 0; i < jsonObject.items.length; i++) {
     let title = jsonObject.items[i]['title'];
     let dreamDescription = jsonObject.items[i]['description'];
     let dueDate = '01-01-2001';
-    var itemDiv = $(' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> <button class="editItem"> edit </button> <button class="changeStatusOfItem"> send to Memory </button> </div>');
+    var itemDiv = $(' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> <button class="changeStatusOfItem"> send to Memory </button> </div>');
     $('#inProgress').prepend(itemDiv);
   }
   console.log(jsonObject);
@@ -96,7 +87,6 @@ module.exports = {
   signUpSuccess,
   changePasswordSuccess,
   passwordFailure,
-  createItemSuccess,
   populatingDreams,
   deleteItemSuccess,
 };
