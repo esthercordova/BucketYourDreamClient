@@ -14,11 +14,21 @@ const onSignUp = (event) => {
   .fail(ui.failure);
 };
 
+const onSignInSuccess = (data) => {
+
+  ui.signInSuccess(data);
+  
+  api.loadItems()
+  .done(ui.populatingDreams)
+  .fail(ui.failure);
+
+};
+
 const onSignIn = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signIn(data)
-  .done(ui.signInSuccess)
+  .done(onSignInSuccess)
   .fail(ui.failure);
 };
 
@@ -42,16 +52,11 @@ const onCreateItem = (event) => {
   let dueDate = $('#todo-form :input[name=due-date]').val();
   let dreamDescription = $('#todo-form :input[name=dream-description]').val();
   let title = $('#todo-form :input[name=title]').val();
-  var itemDiv = ' <div class="itemContainer"> <div class="itemTitle">'+ title +'</div> \
-    <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> </div>';
-  $('#inProgress').append(itemDiv);
-
-  api.createItem(dueDate, dreamDescription, title);
-
-
+  api.createItem(dueDate, dreamDescription, title)
+  .done(ui.createItemSuccess(dueDate, dreamDescription, title))
+  .fail(ui.failure);
 
 };
-
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);

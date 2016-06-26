@@ -15,6 +15,20 @@ const success = (data) => {
   }
 };
 
+const createItemSuccess = (dueDate, dreamDescription, title) => {
+  if (dueDate && dreamDescription && title) {
+    var itemDiv = ' <div class="itemContainer"> <div class="itemTitle">'+ title +'</div> \
+      <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> </div>';
+    $('#inProgress').append(itemDiv);
+  } else {
+    console.log('It doesnt have data!');
+  }
+};
+
+const populatingDreams = (jsonObject) => {
+  console.log(jsonObject);
+};
+
 const failure = (error) => {
   console.error(error);
 };
@@ -67,5 +81,7 @@ module.exports = {
   signOutSuccess,
   signUpSuccess,
   changePasswordSuccess,
-  passwordFailure
+  passwordFailure,
+  createItemSuccess,
+  populatingDreams,
 };

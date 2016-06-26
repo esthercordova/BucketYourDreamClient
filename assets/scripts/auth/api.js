@@ -31,6 +31,13 @@ const signIn = (data) => {
   });
 };
 
+const loadItems = () => {
+  return $.ajax({
+    url: app.host + '/items',
+    method: "GET",
+  });
+};
+
 const signOut = () => {
   return $.ajax({
     url: app.host + '/sign-out/' + app.user.id,
@@ -58,4 +65,5 @@ module.exports = {
   signOut,
   changePassword,
   createItem,
+  loadItems,
 };
