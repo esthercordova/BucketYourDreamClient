@@ -26,6 +26,14 @@ const createItemSuccess = (dueDate, dreamDescription, title) => {
 };
 
 const populatingDreams = (jsonObject) => {
+  for (var i = 0; i < jsonObject.items.length; i++) {
+    let title = jsonObject.items[i]['title'];
+    let dreamDescription = jsonObject.items[i]['description'];
+    let dueDate = '01-01-2001';
+    var itemDiv = ' <div class="itemContainer"> <div class="itemTitle">'+ title +'</div> \
+      <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> </div>';
+    $('#inProgress').append(itemDiv);
+  }
   console.log(jsonObject);
 };
 
