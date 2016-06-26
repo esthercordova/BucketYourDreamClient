@@ -18,8 +18,10 @@ const success = (data) => {
 const createItemSuccess = (dueDate, dreamDescription, title) => {
   if (dueDate && dreamDescription && title) {
     var itemDiv = ' <div class="itemContainer"> <div class="itemTitle">'+ title +'</div> \
-      <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> </div>';
+      <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> \
+      '+ dueDate +'</div> </div>'+ '<button> delete </button>';
     $('#inProgress').prepend(itemDiv);
+    $('.itemContainer')[0].draggable();
   } else {
     console.log('It doesnt have data!');
   }
@@ -30,8 +32,9 @@ const populatingDreams = (jsonObject) => {
     let title = jsonObject.items[i]['title'];
     let dreamDescription = jsonObject.items[i]['description'];
     let dueDate = '01-01-2001';
-    var itemDiv = ' <div class="itemContainer"> <div class="itemTitle">'+ title +'</div> \
-      <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> </div>';
+    var itemDiv = ' <div class="itemContainer  ui-widget-content"> <div class="itemTitle">'+ title +'</div> \
+      <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'\
+      </div> </div>'+ '<button> delete </button>';
     $('#inProgress').prepend(itemDiv);
   }
   console.log(jsonObject);
