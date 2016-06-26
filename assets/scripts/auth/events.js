@@ -65,6 +65,16 @@ const onDeleteItem = (event) => {
   .fail(ui.failure);
 };
 
+const onChangeStatusItem = (event) => {
+  event.preventDefault();
+  console.log("got so far, clicked send to memory button");
+};
+
+const onEditItem = (event) => {
+  event.preventDefault();
+  console.log("got so far, clickes edit button");
+};
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
@@ -72,6 +82,8 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword);
   $('#todo-form').on('submit', function(event){event.preventDefault(); console.log($('button').parent()[0].remove())});
   $('#inProgress').on('click', 'button.deleteItem', onDeleteItem);
+  $('#inProgress').on('click', 'button.changeStatusOfItem', onChangeStatusItem);
+  $('#inProgress').on('click', 'button.editItem', onEditItem);
 };
 //
 module.exports = {
