@@ -2,6 +2,19 @@
 
 const app = require('../app.js');
 
+const createItem = (dueDate, dreamDescription, title) => {
+  return $.ajax ({
+    url: app.host + '/items',
+    method: "POST",
+    data:
+      {item:{
+        title: title,
+        description: dreamDescription,
+      }
+      }
+  });
+};
+
 const signUp = (data) => {
   return $.ajax({
     url: app.host + '/sign-up',
@@ -44,4 +57,5 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
+  createItem,
 };
