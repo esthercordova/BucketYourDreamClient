@@ -60,7 +60,7 @@ const changePasswordSuccess = () => {
 
 const signUpSuccess = (data) => {
   if(data){
-    $('#signUpMessage').html('You made an account. Please sign in to start playing.');
+    $('#signUpMessage').html('You made an account. Please signIn to start converting dreams into memories!');
     $('#signInMessage').html('');
     $('#signOutMessage').html('');
     $('#changePasswordMessage').html('');
