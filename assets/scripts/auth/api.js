@@ -20,8 +20,6 @@ const changeStatusOfItem = (itemId, title, dreamDescription, dreamDate) => {
   });
 };
 
-
-
 const createItem = (dreamDescription, title, dreamDate) => {
   return $.ajax ({
     url: app.host + '/items',

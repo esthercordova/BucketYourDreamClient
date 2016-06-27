@@ -86,7 +86,6 @@ const changeStatusOfItemSuccess = (event) => {
 
 const onChangeStatusItem = (event) => {
   event.preventDefault();
-  console.log("got so far, clicked send to memory button");
   let itemId = $(event.target.parentElement).data('id');
   let title = $(event.target.parentElement).find('.itemTitle').html();
   let dreamDescription = $(event.target.parentElement).find('.itemDescription').html();

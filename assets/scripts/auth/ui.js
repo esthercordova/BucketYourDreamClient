@@ -30,14 +30,15 @@ const populatingDreams = (jsonObject) => {
       let dueDate = jsonObject.items[i]['dreamdate'];
       let status = jsonObject.items[i]['status'];
       console.log(dueDate)
-      let itemDiv = $(' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> <button class="changeStatusOfItem"> send to Memory </button> </div>');
+      let itemDivDream = $(' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> <button class="changeStatusOfItem"> send to Memory </button> </div>');
+      let itemDivMemory = $(' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> </div>');
       if (status == "dream") {
-      $('#inProgress').prepend(itemDiv);
+      $('#inProgress').prepend(itemDivDream);
     } else if (status == "memory") {
-      $('#completed').prepend(itemDiv);
-    }
-  };
-  };
+      $('#completed').prepend(itemDivMemory);
+      $('#changeStatusOfItem').hide();
+    } }
+  }
 };
 
 const failure = (error) => {
