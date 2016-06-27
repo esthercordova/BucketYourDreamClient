@@ -29,7 +29,14 @@ padding: 5px;
   min-height: 340px;
   border-radius: 10px;
   padding-bottom: 15px;
+  background: rgba(204, 204, 204, 0.5);
+}
 
+.bucket-list-headline {
+  width: 250px;
+  float: left;
+  margin: 0 6px;
+  padding-bottom: 15px;
 }
 .bucket-list input, .bucket-list textarea {
   width: 240px;

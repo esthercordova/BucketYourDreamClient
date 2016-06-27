@@ -13,7 +13,7 @@ const changeStatusOfItem = (itemId, title, dreamDescription, dreamDate) => {
       {item:{
         title: title,
         description: dreamDescription,
-        status: "memory"
+        status: "memory",
       }
       }
   });
