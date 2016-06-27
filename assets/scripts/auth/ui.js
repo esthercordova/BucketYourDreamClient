@@ -24,6 +24,8 @@ const populatingDreams = (jsonObject) => {
   $('#completed').empty();
 
   for (var i = 0; i < jsonObject.items.length; i++) {
+    if (jsonObject.items[i]['user_id'] == app.user.id ) {
+    console.log('this is the user id' + jsonObject.items[i]['user_id']);
     let title = jsonObject.items[i]['title'];
     let dreamDescription = jsonObject.items[i]['description'];
     let dueDate = '01-01-2001';
@@ -34,6 +36,7 @@ const populatingDreams = (jsonObject) => {
   } else if (status == "memory") {
     $('#completed').prepend(itemDiv);
   }
+};
 };
 };
 
