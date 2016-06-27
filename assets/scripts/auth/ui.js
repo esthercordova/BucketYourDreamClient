@@ -25,19 +25,18 @@ const populatingDreams = (jsonObject) => {
 
   for (var i = 0; i < jsonObject.items.length; i++) {
     if (jsonObject.items[i]['user_id'] == app.user.id ) {
-    console.log('this is the user id' + jsonObject.items[i]['user_id']);
-    let title = jsonObject.items[i]['title'];
-    let dreamDescription = jsonObject.items[i]['description'];
-    let dueDate = '01-01-2001';
-    let status = jsonObject.items[i]['status'];
-    let itemDiv = $(' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> <button class="changeStatusOfItem"> send to Memory </button> </div>');
-    if (status == "dream") {
-    $('#inProgress').prepend(itemDiv);
-  } else if (status == "memory") {
-    $('#completed').prepend(itemDiv);
-  }
-};
-};
+      let title = jsonObject.items[i]['title'];
+      let dreamDescription = jsonObject.items[i]['description'];
+      let dueDate = '01-01-2001';
+      let status = jsonObject.items[i]['status'];
+      let itemDiv = $(' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> <button class="changeStatusOfItem"> send to Memory </button> </div>');
+      if (status == "dream") {
+      $('#inProgress').prepend(itemDiv);
+    } else if (status == "memory") {
+      $('#completed').prepend(itemDiv);
+    }
+  };
+  };
 };
 
 const failure = (error) => {
