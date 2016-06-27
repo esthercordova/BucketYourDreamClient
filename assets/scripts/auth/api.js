@@ -2,7 +2,7 @@
 
 const app = require('../app.js');
 
-const changeStatusOfItem = (itemId) => {
+const changeStatusOfItem = (itemId, title, dreamDescription, dreamDate) => {
   return $.ajax({
     url: app.host + '/items/' + itemId,
     method: "PATCH",
@@ -11,9 +11,9 @@ const changeStatusOfItem = (itemId) => {
     },
     data:
       {item:{
-        title: 'title',
-        description: 'dreamDescription',
-        status: false,
+        title: title,
+        description: dreamDescription,
+        status: "memory"
       }
       }
   });
@@ -29,7 +29,7 @@ const createItem = (dueDate, dreamDescription, title) => {
       {item:{
         title: title,
         description: dreamDescription,
-        status: true,
+        status: "dream"
       }
       }
   });

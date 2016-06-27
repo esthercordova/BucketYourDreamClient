@@ -47,6 +47,15 @@ const onChangePassword = (event) => {
   .fail(ui.passwordFailure);
 };
 
+
+  const createItemSuccess = (event) => {
+    api.loadItems()
+    .done(ui.populatingDreams)
+    .fail(ui.failure);
+
+    ui.success(event);
+  };
+
 const onCreateItem = (event) => {
   event.preventDefault();
   let dueDate = $('#todo-form :input[name=due-date]').val();
@@ -54,16 +63,12 @@ const onCreateItem = (event) => {
   let title = $('#todo-form :input[name=title]').val();
 
   api.createItem(dueDate, dreamDescription, title)
-  .done(ui.success)
+  .done(createItemSuccess)
   .fail(ui.failure);
-
-  api.loadItems()
-  .done(ui.populatingDreams)
-  .fail(ui.failure);
-
 };
 
 const onDeleteItem = (event) => {
+  console.log('sadfasdf');
   event.preventDefault();
   let deleteId = $(event.target.parentElement).data('id');
   api.deleteItem(deleteId)
@@ -71,19 +76,28 @@ const onDeleteItem = (event) => {
   .fail(ui.failure);
 };
 
+const changeStatusOfItemSuccess = (event) => {
+  api.loadItems()
+  .done(ui.populatingDreams)
+  .fail(ui.failure);
+
+  ui.success(event);
+};
+
 const onChangeStatusItem = (event) => {
   event.preventDefault();
   console.log("got so far, clicked send to memory button");
   let itemId = $(event.target.parentElement).data('id');
-  api.changeStatusOfItem(itemId)
-  .done(ui.changeStatusOfItemSuccess)
+  let title = $(event.target.parentElement).find('.itemTitle').html();
+  let dreamDescription = $(event.target.parentElement).find('.itemDescription').html();
+  let dreamDate = $(event.target.parentElement).find('.itemDueDate').html();
+
+  api.changeStatusOfItem(itemId, title, dreamDescription, dreamDate)
+  .done(changeStatusOfItemSuccess)
   .fail(ui.failure);
+
 };
 
-const onEditItem = (event) => {
-  event.preventDefault();
-  console.log("got so far, clicked edit button");
-};
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
@@ -91,9 +105,10 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#todo-form').on('submit', onCreateItem);
+  $('#completed').on('click', 'button.deleteItem', onDeleteItem);
+  $('#completed').on('click', 'button.changeStatusOfItem', onChangeStatusItem);
   $('#inProgress').on('click', 'button.deleteItem', onDeleteItem);
   $('#inProgress').on('click', 'button.changeStatusOfItem', onChangeStatusItem);
-  $('#inProgress').on('click', 'button.editItem', onEditItem);
 };
 //
 module.exports = {
