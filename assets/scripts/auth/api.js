@@ -25,11 +25,15 @@ const createItem = (dueDate, dreamDescription, title) => {
   return $.ajax ({
     url: app.host + '/items',
     method: "POST",
+    headers: {
+          Authorization: 'Token token=' + app.user.token,
+        },
     data:
       {item:{
         title: title,
         description: dreamDescription,
-        status: "dream"
+        status: "dream",
+        user_id: app.user.id,
       }
       }
   });
@@ -63,7 +67,7 @@ const signIn = (data) => {
 
 const loadItems = () => {
   return $.ajax({
-    url: app.host + '/items',
+    url: app.host + '/items/',
     method: "GET",
   });
 };
