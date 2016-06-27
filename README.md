@@ -15,6 +15,9 @@ Add a due date to your dreams to keep yourself accountable to reach your goals. 
 
 ## Wireframes
 
+Find wireframes for desktop version here:
+[wireframes](https://drive.google.com/file/d/0B25Uw_1rZmBMY2pyV2xMZTNvVWM/view?usp=sharing)
+
 ## User Stories
 
 * As a BucketYourDreamUser I can logIn, SignUp and SignOut.
