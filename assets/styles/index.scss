@@ -5,7 +5,7 @@ body {
   font-family: 'Raleway', sans-serif;
   background: url("~/img/background.jpg") no-repeat;
   background-size: 100%;
-  color: #001a00;
+  color: #003300;
 }
 
 .itemContainer {
@@ -18,7 +18,8 @@ padding: 5px;
 
 .itemTitle {
   font-weight: bold;
-  background-color: #e3e3e3;
+  background-color: #f2f2f2;
+  color: #003300;
 }
 
 .bucket-list {
@@ -86,11 +87,14 @@ h1, h2, h3 {
   border-color: #688300;
 }
 
-.btn-green:hover,
-.btn-green:focus,
-.btn-green:active,
-.btn-green.active,
-.open .dropdown-toggle.btn-green {
+.btn-light-green{
+  color: #688300;
+  background-color: #faffe5;
+  border-color: #faffe5;
+}
+
+
+.btn-green:hover {
   color: #ffffff;
   background-color: #DBC968;
   border-color: #688300;
