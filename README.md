@@ -13,11 +13,6 @@ Add a due date to your dreams to keep yourself accountable to reach your goals. 
 * Ajax & JSON
 * Love
 
-## Wireframes
-
-Find wireframes for the desktop version here:
-* [wireframes](https://drive.google.com/file/d/0B25Uw_1rZmBMY2pyV2xMZTNvVWM/view?usp=sharing)
-
 ## User Stories
 
 * As a BucketYourDreamUser I can logIn, SignUp and SignOut.
@@ -26,6 +21,11 @@ Find wireframes for the desktop version here:
 * During the use of the app I want to be able to add a date to my bucket-list item.
 * I as a user want to be able to change mark the bucket-list items as completed, when completed.
 * As a user I need to be able to delete items.
+
+## Wireframes
+
+Find wireframes for the desktop version here:
+* [Wireframes](https://drive.google.com/file/d/0B25Uw_1rZmBMY2pyV2xMZTNvVWM/view?usp=sharing)
 
 ## Ideas For Future Iterations
 

@@ -61,8 +61,6 @@ const onCreateItem = (event) => {
   let dreamDescription = $('#todo-form :input[name=dream-description]').val();
   let title = $('#todo-form :input[name=title]').val();
   let dreamDate = $('#todo-form :input[name=dream-date]').val();
-  console.log('date is' +dreamDate);
-
 
   api.createItem(dreamDescription, title, dreamDate)
   .done(createItemSuccess)

@@ -9,9 +9,9 @@ $(window).load(function(){
 
 const success = (data) => {
   if (data) {
-    console.log(data);
+    // console.log(data);
   } else {
-    console.log('Success');
+    // console.log('Success');
   }
 };
 
@@ -29,7 +29,6 @@ const populatingDreams = (jsonObject) => {
       let dreamDescription = jsonObject.items[i]['description'];
       let dueDate = jsonObject.items[i]['dreamdate'];
       let status = jsonObject.items[i]['status'];
-      console.log(dueDate)
       let itemDivDream = $(' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> <button class="changeStatusOfItem"> send to Memory </button> </div>');
       let itemDivMemory = $(' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> </div>');
       if (status == "dream") {
@@ -42,12 +41,12 @@ const populatingDreams = (jsonObject) => {
 };
 
 const failure = (error) => {
-  console.error(error);
+  // console.error(error);
 };
 
 const passwordFailure = (error) => {
   $('#changePasswordMessage').html('Your password is not correct. Try again');
-  console.error(error);
+  // console.error(error);
 };
 
 const changePasswordSuccess = () => {
@@ -74,7 +73,6 @@ const signInSuccess = (data) => {
   $('#signOutMessage').html('');
   $('#changePasswordMessage').html('');
   $('#user-interface').show();
-  console.log(app.user);
 };
 
 const signOutSuccess = () => {
