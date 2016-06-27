@@ -24,7 +24,7 @@ const populatingDreams = (jsonObject) => {
   $('#completed').empty();
 
   for (var i = 0; i < jsonObject.items.length; i++) {
-    if (jsonObject.items[i]['user_id'] == app.user.id ) {
+    if (jsonObject.items[i]['user_id'] === app.user.id ) {
       let title = jsonObject.items[i]['title'];
       let dreamDescription = jsonObject.items[i]['description'];
       let dueDate = '01-01-2001';
