@@ -58,17 +58,17 @@ const onChangePassword = (event) => {
 
 const onCreateItem = (event) => {
   event.preventDefault();
-  let dueDate = $('#todo-form :input[name=due-date]').val();
   let dreamDescription = $('#todo-form :input[name=dream-description]').val();
   let title = $('#todo-form :input[name=title]').val();
+  let dreamDate = $('#todo-form :input[name=due-date]').val();
 
-  api.createItem(dueDate, dreamDescription, title)
+
+  api.createItem(dreamDescription, title, dreamDate)
   .done(createItemSuccess)
   .fail(ui.failure);
 };
 
 const onDeleteItem = (event) => {
-  console.log('sadfasdf');
   event.preventDefault();
   let deleteId = $(event.target.parentElement).data('id');
   api.deleteItem(deleteId)

@@ -27,8 +27,9 @@ const populatingDreams = (jsonObject) => {
     if (jsonObject.items[i]['user_id'] === app.user.id ) {
       let title = jsonObject.items[i]['title'];
       let dreamDescription = jsonObject.items[i]['description'];
-      let dueDate = '01-01-2001';
+      let dueDate = jsonObject.items[i]['dreamdate'];
       let status = jsonObject.items[i]['status'];
+      console.log(dueDate)
       let itemDiv = $(' <div class="itemContainer ui-widget-content" data-id="'+ jsonObject.items[i]['id'] +'"> <div class="itemTitle">'+ title +'</div> <div class="itemDescription"> '+ dreamDescription + '</div> <div class="itemDueDate"> '+ dueDate +'</div> <button class="deleteItem"> delete </button> <button class="changeStatusOfItem"> send to Memory </button> </div>');
       if (status == "dream") {
       $('#inProgress').prepend(itemDiv);

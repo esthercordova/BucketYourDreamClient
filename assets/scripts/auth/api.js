@@ -13,6 +13,7 @@ const changeStatusOfItem = (itemId, title, dreamDescription, dreamDate) => {
       {item:{
         title: title,
         description: dreamDescription,
+        dreamdate: dreamDate,
         status: "memory",
       }
       }
@@ -21,7 +22,7 @@ const changeStatusOfItem = (itemId, title, dreamDescription, dreamDate) => {
 
 
 
-const createItem = (dueDate, dreamDescription, title) => {
+const createItem = (dreamDescription, title, dreamDate) => {
   return $.ajax ({
     url: app.host + '/items',
     method: "POST",
@@ -33,6 +34,7 @@ const createItem = (dueDate, dreamDescription, title) => {
         title: title,
         description: dreamDescription,
         status: "dream",
+        dreamdate: dreamDate,
         user_id: app.user.id,
       }
       }
