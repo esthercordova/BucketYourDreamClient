@@ -68,7 +68,7 @@ webpackJsonp([0],[
 	var onSignIn = function onSignIn(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  api.signIn(data).done(onSignInSuccess).fail(ui.failure);
+	  api.signIn(data).done(onSignInSuccess).fail(ui.SignInFailure);
 	};
 
 	var onSignOut = function onSignOut(event) {
@@ -95,6 +95,8 @@ webpackJsonp([0],[
 	  var dreamDate = $('#todo-form :input[name=dream-date]').val();
 
 	  api.createItem(dreamDescription, title, dreamDate).done(createItemSuccess).fail(ui.failure);
+
+	  $('.emptyInput').val('');
 	};
 
 	var onDeleteItem = function onDeleteItem(event) {
@@ -333,6 +335,8 @@ webpackJsonp([0],[
 	$(window).load(function () {
 	  $('#welcomeModal').modal('show');
 	  $('#user-interface').hide();
+	  $('#navSettings').hide();
+	  $('#navSignOut').hide();
 	});
 
 	var success = function success(data) {
@@ -392,6 +396,10 @@ webpackJsonp([0],[
 	    $('#signInMessage').html('');
 	    $('#signOutMessage').html('');
 	    $('#changePasswordMessage').html('');
+
+	    $('#navSignUp').hide();
+	    $('#navSettings').hide();
+	    $('#navSignOut').hide();
 	  }
 	};
 
@@ -402,6 +410,15 @@ webpackJsonp([0],[
 	  $('#signOutMessage').html('');
 	  $('#changePasswordMessage').html('');
 	  $('#user-interface').show();
+
+	  $('#navSignIn').hide();
+	  $('#navSignUp').hide();
+	  $('#navSettings').show();
+	  $('#navSignOut').show();
+	};
+
+	var SignInFailure = function SignInFailure(error) {
+	  $('#signInMessage').html('Password or Username is wrong, try again!');
 	};
 
 	var signOutSuccess = function signOutSuccess() {
@@ -411,6 +428,11 @@ webpackJsonp([0],[
 	  $('#signUpMessage').html('');
 	  $('#changePasswordMessage').html('');
 	  $('#user-interface').hide();
+
+	  $('#navSignIn').show();
+	  $('#navSignUp').show();
+	  $('#navSettings').hide();
+	  $('#navSignOut').hide();
 	};
 
 	module.exports = {
@@ -422,7 +444,9 @@ webpackJsonp([0],[
 	  changePasswordSuccess: changePasswordSuccess,
 	  passwordFailure: passwordFailure,
 	  populatingDreams: populatingDreams,
-	  deleteItemSuccess: deleteItemSuccess
+	  deleteItemSuccess: deleteItemSuccess,
+	  SignInFailure: SignInFailure
+
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
