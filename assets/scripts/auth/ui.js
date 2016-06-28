@@ -63,6 +63,8 @@ const signUpSuccess = (data) => {
     $('#signInMessage').html('');
     $('#signOutMessage').html('');
     $('#changePasswordMessage').html('');
+
+    $('#navSignUp').hide();
 }
 };
 
@@ -73,6 +75,13 @@ const signInSuccess = (data) => {
   $('#signOutMessage').html('');
   $('#changePasswordMessage').html('');
   $('#user-interface').show();
+
+  $('#navSignIn').hide();
+  $('#navSignUp').hide();
+};
+
+const SignInFailure = (error) => {
+  $('#signInMessage').html('Password or Username is wrong, try again!');
 };
 
 const signOutSuccess = () => {
@@ -94,4 +103,5 @@ module.exports = {
   passwordFailure,
   populatingDreams,
   deleteItemSuccess,
+  SignInFailure,
 };

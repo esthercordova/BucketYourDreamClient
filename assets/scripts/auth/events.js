@@ -29,7 +29,7 @@ const onSignIn = (event) => {
   let data = getFormFields(event.target);
   api.signIn(data)
   .done(onSignInSuccess)
-  .fail(ui.failure);
+  .fail(ui.SignInFailure);
 };
 
 const onSignOut = (event) => {
@@ -61,8 +61,6 @@ const onCreateItem = (event) => {
   let dreamDescription = $('#todo-form :input[name=dream-description]').val();
   let title = $('#todo-form :input[name=title]').val();
   let dreamDate = $('#todo-form :input[name=dream-date]').val();
-
-
 
   api.createItem(dreamDescription, title, dreamDate)
   .done(createItemSuccess)
