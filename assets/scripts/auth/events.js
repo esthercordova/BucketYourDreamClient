@@ -62,9 +62,13 @@ const onCreateItem = (event) => {
   let title = $('#todo-form :input[name=title]').val();
   let dreamDate = $('#todo-form :input[name=dream-date]').val();
 
+
+
   api.createItem(dreamDescription, title, dreamDate)
   .done(createItemSuccess)
   .fail(ui.failure);
+
+  $('.emptyInput').val('');
 };
 
 const onDeleteItem = (event) => {
