@@ -1,14 +1,15 @@
 tmp
 dist
+<<<<<<< HEAD
 vendor.js
 specs.js
 bundle.js
+=======
+ vendor.js
+specs.js
+ bundle.js
+>>>>>>> gh-pages
 _SpecRunner.html
-*.woff2
-*.woff
-*.svg
-*.ttf
-*.eot
 
 # Created by https://www.gitignore.io
 

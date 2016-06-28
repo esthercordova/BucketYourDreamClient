@@ -317,7 +317,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  host: 'http://localhost:3000'
+	  host: 'https://bucket-your-dream.herokuapp.com'
 	};
 
 	module.exports = app;
