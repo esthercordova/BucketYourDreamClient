@@ -31,4 +31,10 @@ Find wireframes for the desktop version here:
 
 In a future iteration I would like to add the functionality to add serveral users to access the same bucket list. This way couples could create their personal relationship goals.
 
-## Link To BucketYourDream
+## Links
+
+### Link To Heroku API
+* https://bucket-your-dream.herokuapp.com/
+
+### Link To Repo of API
+* https://github.com/esthercordova/project-2-api
