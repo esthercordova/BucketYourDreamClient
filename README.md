@@ -33,8 +33,8 @@ In a future iteration I would like to add the functionality to add serveral user
 
 ## Links
 
-### Link To Heroku API
-* https://bucket-your-dream.herokuapp.com/
+*[Link To Heroku API] (https://bucket-your-dream.herokuapp.com/)
 
-### Link To Repo of API
-* https://github.com/esthercordova/project-2-api
+* [Link To Repo of API] (https://github.com/esthercordova/project-2-api)
+
+* [Link to BucketYourDream] (https://esthercordova.github.io/project-2-client/)
