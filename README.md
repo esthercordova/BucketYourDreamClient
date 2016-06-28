@@ -37,4 +37,4 @@ In a future iteration I would like to add the functionality to add serveral user
 
 * [Link To Repo of API] (https://github.com/esthercordova/project-2-api)
 
-* [Link to BucketYourDream] (https://esthercordova.github.io/project-2-client/)
+* [Link to BucketYourDream] (https://esthercordova.github.io/BucketYourDreamClient/)
