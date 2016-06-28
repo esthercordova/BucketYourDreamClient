@@ -5,6 +5,8 @@ const app = require('../app.js');
 $(window).load(function(){
        $('#welcomeModal').modal('show');
        $('#user-interface').hide();
+       $('#navSettings').hide();
+       $('#navSignOut').hide();
    });
 
 const success = (data) => {
@@ -65,6 +67,8 @@ const signUpSuccess = (data) => {
     $('#changePasswordMessage').html('');
 
     $('#navSignUp').hide();
+    $('#navSettings').hide();
+    $('#navSignOut').hide();
 }
 };
 
@@ -78,6 +82,9 @@ const signInSuccess = (data) => {
 
   $('#navSignIn').hide();
   $('#navSignUp').hide();
+  $('#navSettings').show();
+  $('#navSignOut').show();
+
 };
 
 const SignInFailure = (error) => {
@@ -91,6 +98,11 @@ const signOutSuccess = () => {
   $('#signUpMessage').html('');
   $('#changePasswordMessage').html('');
   $('#user-interface').hide();
+
+  $('#navSignIn').show();
+  $('#navSignUp').show();
+  $('#navSettings').hide();
+  $('#navSignOut').hide();
 };
 
 module.exports = {
@@ -104,4 +116,5 @@ module.exports = {
   populatingDreams,
   deleteItemSuccess,
   SignInFailure,
+
 };
