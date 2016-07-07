@@ -275,7 +275,10 @@ webpackJsonp([0],[
 	var loadItems = function loadItems() {
 	  return $.ajax({
 	    url: app.host + '/items/',
-	    method: "GET"
+	    method: "GET",
+	    headers: {
+	      Authorization: 'Token token=' + app.user.token
+	    }
 	  });
 	};
 
@@ -322,6 +325,7 @@ webpackJsonp([0],[
 	  host: 'https://bucket-your-dream.herokuapp.com'
 	};
 
+	// host: 'http://localhost:3000',
 	module.exports = app;
 
 /***/ },
