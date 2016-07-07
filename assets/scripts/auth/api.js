@@ -69,6 +69,9 @@ const loadItems = () => {
   return $.ajax({
     url: app.host + '/items/',
     method: "GET",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
