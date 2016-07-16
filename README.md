@@ -10,7 +10,7 @@ Add a due date to your dreams to keep yourself accountable to reach your goals. 
 * jQuery
 * Bootstrap
 * HTML & CSS
-* Ajax & JSON
+* AJAX
 * Love
 
 ## User Stories
